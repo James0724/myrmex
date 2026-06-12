@@ -1,0 +1,132 @@
+@import "tailwindcss";
+
+@theme {
+  /* ── Brand Palette — Urban Jungle + Construction ─── */
+  --color-brand-green:        #1B5E20;  /* deep forest — primary */
+  --color-brand-green-dark:   #144D1A;  /* deep hover */
+  --color-brand-green-mid:    #388E3C;  /* vibrant mid-green */
+  --color-brand-green-light:  #A5D6A7;  /* soft mint */
+  --color-brand-green-muted:  #81C784;  /* medium mint on dark */
+  --color-brand-orange:       #FFAB40;  /* construction amber-orange */
+  --color-brand-orange-dark:  #E65100;  /* deep orange hover */
+  --color-brand-coral:        #FF7043;  /* coral accent */
+  --color-brand-dark:         #1C2320;  /* near-black with green undertone */
+  --color-brand-darker:       #0D1510;  /* deep dark with green character */
+  --color-brand-cream:        #F7FAF8;
+  --color-brand-cream-dark:   #E8F0EB;
+  --color-brand-off-white:    #F1F7F3;  /* off-white with green tint */
+  --color-brand-surface:      #F9FCF9;
+
+  /* ── Typography ──────────────────────────────────── */
+  --font-display: 'Barlow Condensed', sans-serif;
+  --font-body:    'Inter', sans-serif;
+
+  /* ── Easings ─────────────────────────────────────── */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-circ: cubic-bezier(0.85, 0, 0.15, 1);
+
+  /* ── Camera Pan keyframe ─────────────────────────── */
+  @keyframes cameraPan {
+    0%   { transform: scale(1.25) translate(0%, 0%); }
+    25%  { transform: scale(1.25) translate(-6%, 3%); }
+    50%  { transform: scale(1.25) translate(0%, -6%); }
+    75%  { transform: scale(1.25) translate(6%, -3%); }
+    100% { transform: scale(1.25) translate(0%, 0%); }
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes lineGrow {
+    from { width: 0; }
+    to   { width: 3rem; }
+  }
+
+  @keyframes ticker {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+}
+
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: #ffffff;
+    color: var(--color-brand-dark);
+    line-height: 1.65;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+  }
+
+  ::selection {
+    background-color: var(--color-brand-green);
+    color: white;
+  }
+}
+
+@layer utilities {
+  /* Container */
+  .container-main {
+    max-width: 1280px;
+    margin-inline: auto;
+    padding-inline: 1.5rem;
+  }
+  @media (min-width: 768px)  { .container-main { padding-inline: 2.5rem; } }
+  @media (min-width: 1280px) { .container-main { padding-inline: 2rem; } }
+
+  /* Camera pan on hero images */
+  .animate-camera-pan {
+    animation: cameraPan 22s ease-in-out infinite;
+    will-change: transform;
+    transform-origin: center center;
+  }
+
+  /* Infinite ticker */
+  .animate-ticker { animation: ticker 28s linear infinite; }
+
+  /* Btn fill-up hover */
+  .btn-fill {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .btn-fill::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--color-brand-green-mid);
+    transform: translateY(101%);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: -1;
+  }
+  .btn-fill:hover::before { transform: translateY(0); }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 5px; }
+  ::-webkit-scrollbar-track { background: #f1f1f1; }
+  ::-webkit-scrollbar-thumb { background: var(--color-brand-green); border-radius: 3px; }
+
+  /* No scrollbar helper */
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+}
+
+/* Embla carousel base */
+.embla { overflow: hidden; }
+.embla__container { display: flex; }
+.embla__slide { flex: 0 0 100%; min-width: 0; }
