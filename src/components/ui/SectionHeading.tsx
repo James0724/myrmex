@@ -10,12 +10,20 @@ interface Props {
   light?: boolean;
 }
 
-export default function SectionHeading({ eyebrow, title, highlight, description, light }: Props) {
+export default function SectionHeading({
+  eyebrow,
+  title,
+  highlight,
+  description,
+  light,
+}: Props) {
   const textColor = light ? "text-white" : "text-brand-darker";
-  const subColor  = light ? "text-white/50" : "text-gray-400";
+  const subColor = light ? "text-white/50" : "text-gray-400";
 
   return (
-    <div className={`relative w-full pb-6 border-b mb-10 ${light ? "border-white/15" : "border-gray-200"}`}>
+    <div
+      className={`relative w-full pb-6 border-b mb-10 ${light ? "border-white/15" : "border-gray-200"}`}
+    >
       {eyebrow && (
         <div className="flex items-center gap-4 mb-4">
           <motion.span
@@ -57,7 +65,11 @@ export default function SectionHeading({ eyebrow, title, highlight, description,
                 initial={{ y: "100%", opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: 0.12, ease: [0.16, 1, 0.3, 1] }}
+                transition={{
+                  duration: 0.8,
+                  delay: 0.12,
+                  ease: [0.16, 1, 0.3, 1],
+                }}
                 className={`relative z-10 block font-display text-5xl md:text-6xl lg:text-7xl font-700 uppercase tracking-tight text-brand-green-mid pr-3`}
               >
                 {highlight}
@@ -74,12 +86,16 @@ export default function SectionHeading({ eyebrow, title, highlight, description,
         </h2>
 
         {description && (
-          <div className="lg:max-w-xs overflow-hidden">
+          <div className="lg:max-w-lg overflow-hidden">
             <motion.p
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.7, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+              transition={{
+                duration: 0.7,
+                delay: 0.3,
+                ease: [0.16, 1, 0.3, 1],
+              }}
               className={`text-xs uppercase leading-relaxed tracking-wide border-l-2 border-brand-orange pl-4 ${subColor}`}
             >
               {description}
