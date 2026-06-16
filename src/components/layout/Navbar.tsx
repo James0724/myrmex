@@ -148,9 +148,9 @@ export default function Navbar() {
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
-          className="text-white p-2 rounded-full hover:bg-white/10 transition-colors"
+          className="text-white rounded-full hover:bg-white/10 transition-colors"
         >
-          {mobileOpen ? <X size={20} /> : <Menu size={20} />}
+          {mobileOpen ? <X size={18} /> : <Menu size={18} />}
         </button>
       </motion.div>
 

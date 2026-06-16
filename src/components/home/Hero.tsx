@@ -7,7 +7,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import Fade from "embla-carousel-fade";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight, Pause, Play } from "lucide-react";
 
 const slides = [
   {
@@ -41,6 +41,8 @@ const slides = [
     sub: "Professional, smart, and lasting maintenance solutions.",
   },
 ];
+
+const SLIDE_DURATION = 6; // seconds — must match autoplay delay
 
 const BLUR_PLACEHOLDER =
   "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxIiBoZWlnaHQ9IjEiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiMxNDE0MTQiLz48L3N2Zz4=";
@@ -92,11 +94,7 @@ function Slide({
                 <motion.div
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{
-                    duration: 0.6,
-                    delay: 0.1,
-                    ease: [0.16, 1, 0.3, 1],
-                  }}
+                  transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
                   className="flex items-center gap-3 mb-5"
                 >
                   <span className="h-0.5 w-10 bg-brand-orange" />
@@ -110,12 +108,8 @@ function Slide({
                   <motion.h1
                     initial={{ y: "100%", opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
-                    transition={{
-                      duration: 0.8,
-                      delay: 0.2,
-                      ease: [0.16, 1, 0.3, 1],
-                    }}
-                    className="font-display text-6xl sm:text-7xl lg:text-8xl font-800 text-white uppercase leading-none"
+                    transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+                    className="font-display text-5xl sm:text-7xl lg:text-8xl font-800 text-white uppercase leading-none"
                   >
                     {slide.headline}
                   </motion.h1>
@@ -125,11 +119,7 @@ function Slide({
                 <motion.p
                   initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{
-                    duration: 0.6,
-                    delay: 0.4,
-                    ease: [0.16, 1, 0.3, 1],
-                  }}
+                  transition={{ duration: 0.6, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
                   className="text-white/70 text-base sm:text-lg mb-10 leading-relaxed"
                 >
                   {slide.sub}
@@ -139,11 +129,7 @@ function Slide({
                 <motion.div
                   initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{
-                    duration: 0.6,
-                    delay: 0.5,
-                    ease: [0.16, 1, 0.3, 1],
-                  }}
+                  transition={{ duration: 0.6, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
                   className="flex flex-wrap gap-4"
                 >
                   <Link
@@ -170,13 +156,27 @@ function Slide({
 
 export default function Hero() {
   const [activeIdx, setActiveIdx] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, duration: 20 }, [
-    Autoplay({ delay: 6000, stopOnInteraction: false }),
+    Autoplay({ delay: SLIDE_DURATION * 1000, stopOnInteraction: false }),
     Fade(),
   ]);
 
   const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
   const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
+
+  const togglePause = useCallback(() => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const ap = (emblaApi?.plugins() as any)?.autoplay;
+    if (!ap) return;
+    if (ap.isPlaying()) {
+      ap.stop();
+      setIsPaused(true);
+    } else {
+      ap.play();
+      setIsPaused(false);
+    }
+  }, [emblaApi]);
 
   useEffect(() => {
     if (!emblaApi) return;
@@ -188,50 +188,107 @@ export default function Hero() {
       <div className="embla h-full" ref={emblaRef}>
         <div className="embla__container h-full">
           {slides.map((slide, i) => (
-            <Slide
-              key={i}
-              slide={slide}
-              priority={i === 0}
-              active={activeIdx === i}
-            />
+            <Slide key={i} slide={slide} priority={i === 0} active={activeIdx === i} />
           ))}
         </div>
       </div>
 
-      {/* Prev / Next */}
+      {/* Side arrows — sm and up only; hidden on mobile to prevent overlapping slide content */}
       <button
         onClick={scrollPrev}
         aria-label="Previous slide"
-        className="absolute left-6 top-1/2 -translate-y-1/2 z-30 w-11 h-11 flex items-center justify-center border border-white/25 text-white hover:bg-brand-green hover:border-brand-green transition-all duration-200"
+        className="hidden sm:flex absolute left-4 lg:left-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 items-center justify-center border border-white/25 text-white hover:bg-brand-green hover:border-brand-green transition-all duration-200"
       >
         <ChevronLeft size={20} />
       </button>
       <button
         onClick={scrollNext}
         aria-label="Next slide"
-        className="absolute right-6 top-1/2 -translate-y-1/2 z-30 w-11 h-11 flex items-center justify-center border border-white/25 text-white hover:bg-brand-green hover:border-brand-green transition-all duration-200"
+        className="hidden sm:flex absolute right-4 lg:right-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 items-center justify-center border border-white/25 text-white hover:bg-brand-green hover:border-brand-green transition-all duration-200"
       >
         <ChevronRight size={20} />
       </button>
 
-      {/* Dot indicators */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 flex gap-2">
-        {slides.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => emblaApi?.scrollTo(i)}
-            className={`h-0.75 transition-all duration-500 ${
-              activeIdx === i ? "w-8 bg-brand-green" : "w-3 bg-white/30"
-            }`}
-            aria-label={`Go to slide ${i + 1}`}
-          />
-        ))}
+      {/* Bottom controls bar — all screen sizes */}
+      <div className="absolute bottom-6 sm:bottom-8 left-0 right-0 z-30">
+        <div className="container-main">
+          <div className="flex items-center gap-3">
+
+            {/* Prev arrow — mobile only (sm+ uses side arrows) */}
+            <button
+              onClick={scrollPrev}
+              aria-label="Previous slide"
+              className="sm:hidden shrink-0 w-12 h-12 flex items-center justify-center border border-white/25 text-white hover:bg-brand-green hover:border-brand-green transition-all duration-200"
+            >
+              <ChevronLeft size={18} />
+            </button>
+
+            {/* Progress indicators with animated fill */}
+            <div className="flex items-center gap-2">
+              {slides.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => emblaApi?.scrollTo(i)}
+                  aria-label={`Go to slide ${i + 1}`}
+                  className="py-4 -my-4"
+                >
+                  <div
+                    className={`relative overflow-hidden h-0.5 transition-[width] duration-500 ${
+                      activeIdx === i ? "w-10 bg-white/20" : "w-3 bg-white/25"
+                    }`}
+                  >
+                    {activeIdx === i && (
+                      <motion.div
+                        key={`${activeIdx}-${isPaused}`}
+                        className="absolute inset-0 bg-brand-green origin-left"
+                        initial={{ scaleX: 0 }}
+                        animate={{ scaleX: isPaused ? 0 : 1 }}
+                        transition={
+                          isPaused
+                            ? { duration: 0 }
+                            : { duration: SLIDE_DURATION, ease: "linear" }
+                        }
+                      />
+                    )}
+                  </div>
+                </button>
+              ))}
+            </div>
+
+            {/* Slide counter — sm and up */}
+            <span className="hidden sm:inline text-white/40 text-[10px] font-bold tracking-[0.2em] tabular-nums ml-1">
+              {String(activeIdx + 1).padStart(2, "0")} /{" "}
+              {String(slides.length).padStart(2, "0")}
+            </span>
+
+            <div className="flex-1" />
+
+            {/* Pause / Play */}
+            <button
+              onClick={togglePause}
+              aria-label={isPaused ? "Resume slideshow" : "Pause slideshow"}
+              className="w-9 h-9 flex items-center justify-center text-white/40 hover:text-white transition-colors shrink-0"
+            >
+              {isPaused ? <Play size={14} /> : <Pause size={14} />}
+            </button>
+
+            {/* Next arrow — mobile only */}
+            <button
+              onClick={scrollNext}
+              aria-label="Next slide"
+              className="sm:hidden shrink-0 w-12 h-12 flex items-center justify-center border border-white/25 text-white hover:bg-brand-green hover:border-brand-green transition-all duration-200"
+            >
+              <ChevronRight size={18} />
+            </button>
+
+          </div>
+        </div>
       </div>
 
-      {/* Stats strip at bottom */}
-      <div className="absolute bottom-0 left-0 right-0 z-30 hidden lg:block">
+      {/* Stats strip — desktop only, positioned above the bottom controls */}
+      <div className="absolute bottom-24 left-0 right-0 z-30 hidden lg:block">
         <div className="container-main">
-          <div className="flex gap-0 w-fit ml-auto mb-12">
+          <div className="flex gap-0 w-fit ml-auto">
             {[
               { v: "500+", l: "Projects" },
               { v: "5+", l: "Years" },
@@ -241,9 +298,7 @@ export default function Hero() {
                 key={l}
                 className={`text-center px-8 py-4 ${i < 2 ? "border-r border-white/15" : ""} bg-black/30 backdrop-blur-sm`}
               >
-                <div className="font-display text-2xl font-800 text-white">
-                  {v}
-                </div>
+                <div className="font-display text-2xl font-800 text-white">{v}</div>
                 <div className="text-white/50 text-[10px] uppercase tracking-widest font-medium">
                   {l}
                 </div>
