@@ -135,14 +135,14 @@ export default function Navbar() {
         transition={{ type: "spring", stiffness: 180, damping: 30 }}
         className="lg:hidden flex items-center justify-between px-4"
       >
-        <Link href="/" className="relative w-40 h-12">
+        <Link href="/" className="relative shrink-0 h-6 w-40 overflow-visible">
           <Image
             src="/logo.png"
             alt="Myrmex"
-            fill
-            sizes="160px"
-            className="object-contain object-left brightness-0 invert"
+            width={320}
+            height={80}
             priority
+            className="absolute top-1/2 -translate-y-1/2 h-20 w-auto object-contain brightness-0 invert"
           />
         </Link>
         <button

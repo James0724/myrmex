@@ -6,32 +6,38 @@ import SectionHeading from "@/components/ui/SectionHeading";
 const steps = [
   {
     num: "01",
-    title: "Site Assessment",
-    description: "We visit your property for a thorough inspection of all existing systems — power, security, and networking.",
-    icon: "🔍",
+    title: "Understanding Client Needs",
+    description: "We begin with in-depth consultation to fully understand your requirements, goals, and property context.",
+    icon: "💬",
   },
   {
     num: "02",
-    title: "Solution Design",
-    description: "We design a tailored plan including AutoCAD layouts and a transparent itemised quotation.",
-    icon: "📐",
+    title: "Site Visit & Assessment",
+    description: "We visit the site to assess existing systems, identify requirements, and gather the information needed for accurate planning.",
+    icon: "🔍",
   },
   {
     num: "03",
-    title: "Professional Installation",
-    description: "Our certified technicians execute the installation using only genuine, quality-assured equipment.",
-    icon: "⚡",
+    title: "System Design",
+    description: "We design the right solution and select appropriate equipment based on site assessment and client requirements.",
+    icon: "📐",
   },
   {
     num: "04",
-    title: "Testing & Handover",
-    description: "Full system testing, documentation, and a detailed handover briefing so you know exactly what's installed.",
-    icon: "✅",
+    title: "System Installation",
+    description: "Our skilled technicians carry out the installation using quality-assured equipment and professional best practices.",
+    icon: "⚡",
   },
   {
     num: "05",
+    title: "Testing & Handover",
+    description: "We test all installed systems, document the work, and walk you through a detailed handover briefing.",
+    icon: "✅",
+  },
+  {
+    num: "06",
     title: "Ongoing Support",
-    description: "Scheduled maintenance visits, rapid emergency response, and a direct line to our technical team.",
+    description: "We provide scheduled maintenance visits to ensure continued system performance and long-term reliability.",
     icon: "🛡️",
   },
 ];
@@ -51,7 +57,7 @@ export default function ProcessSection() {
           {/* Connecting line (desktop) */}
           <div className="hidden lg:block absolute top-[52px] left-0 right-0 h-px bg-gray-200 z-0" />
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-8 lg:gap-4">
             {steps.map((step, i) => (
               <motion.div
                 key={step.num}

@@ -21,10 +21,10 @@ export function formatDateTime(dateString: string): string {
 }
 
 export const SERVICE_LABELS: Record<string, string> = {
-  power: "Power Systems & Electrical",
-  security: "Security Systems",
+  power: "Electrical & Solar Services",
+  security: "Security Systems & CCTV",
   networking: "Networking & Communication",
-  assessment: "Routine Assessments",
-  design: "System Design & Technical Drawings",
+  assessment: "Routine Maintenance & Support",
+  design: "System Design",
   general: "General Enquiry",
 };

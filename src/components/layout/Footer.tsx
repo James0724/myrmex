@@ -3,11 +3,11 @@ import Image from "next/image";
 import { Phone, Mail, MapPin, Globe } from "lucide-react";
 
 const services = [
-  { label: "Power Systems & Electrical", href: "/services#power" },
-  { label: "Security Systems", href: "/services#security" },
+  { label: "Electrical & Solar Services", href: "/services#power" },
+  { label: "Security Systems & CCTV", href: "/services#security" },
   { label: "Networking & Communication", href: "/services#networking" },
-  { label: "Routine Assessments", href: "/services#assessment" },
-  { label: "System Design & Drawings", href: "/services#design" },
+  { label: "Routine Maintenance & Support", href: "/services#assessment" },
+  { label: "System Design", href: "/services#design" },
 ];
 
 const quickLinks = [

@@ -3,28 +3,28 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import SectionHeading from "@/components/ui/SectionHeading";
-import { ShieldCheck, Wrench, FileText, Clock4 } from "lucide-react";
+import { ShieldCheck, Wrench, Clock4, TrendingUp } from "lucide-react";
 
 const reasons = [
   {
-    icon: Wrench,
-    title: "Skilled Workmanship",
-    desc: "Every project executed with precision using industry best practices and certified techniques.",
-  },
-  {
     icon: ShieldCheck,
-    title: "Genuine Products",
-    desc: "We source only authentic, quality-assured materials — no counterfeit or substandard equipment.",
+    title: "Reliable Products",
+    desc: "We use reliable, well-tested equipment from trusted manufacturers to ensure durable and stable systems, reducing failures and minimizing downtime.",
   },
   {
-    icon: FileText,
-    title: "Transparent Service",
-    desc: "Clear communication, detailed reports, and honest pricing from first quote to final handover.",
+    icon: Wrench,
+    title: "Skilled Technicians",
+    desc: "Our skilled technicians apply industry best practices and technical expertise to deliver safe, efficient, and reliable solutions across power, security, and networking systems.",
+  },
+  {
+    icon: TrendingUp,
+    title: "Continuous Improvement",
+    desc: "We continuously learn, adapt, and embrace new technologies to improve our services and deliver more effective, reliable, and future-ready solutions.",
   },
   {
     icon: Clock4,
     title: "After-Service Support",
-    desc: "We remain your maintenance partner long after installation — scheduled visits and rapid response.",
+    desc: "We provide dedicated after-service support to ensure our solutions continue to perform reliably, offering assistance, maintenance, and guidance whenever clients need it.",
   },
 ];
 
@@ -37,7 +37,7 @@ export default function WhyChooseUs() {
           title="What Sets Us"
           highlight="Apart"
           light
-          description="The property maintenance industry is plagued by poor workmanship. We built Myrmex to change that."
+          description="We work with carefully selected products from reliable manufacturers, and our technicians are trained to maintain the balance between quality equipment and professional execution — delivering lasting value for every client."
         />
 
         <div className="grid lg:grid-cols-2 gap-16 items-center mt-4">
@@ -59,9 +59,10 @@ export default function WhyChooseUs() {
             {/* Quote overlay */}
             <div className="absolute bottom-0 left-0 right-0 bg-brand-green p-8">
               <p className="text-white text-sm leading-relaxed italic font-medium">
-                &ldquo;To deliver professional, smart, and lasting maintenance
-                solutions through skilled workmanship, genuine products, and
-                transparent service delivery.&rdquo;
+                &ldquo;To provide reliable solutions that enhance safety,
+                connectivity, and efficiency for homeowners, businesses, and
+                property managers through professional workmanship, dedicated
+                support, and lasting value.&rdquo;
               </p>
               <span className="text-white/60 text-xs uppercase tracking-widest mt-2 block font-bold">
                 — Our Mission

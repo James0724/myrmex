@@ -8,33 +8,33 @@ import SectionHeading from "@/components/ui/SectionHeading";
 const services = [
   {
     id: "power", icon: Zap, num: "01",
-    title: "Power Systems & Electrical",
-    description: "Installation, fault diagnosis, solar energy systems, power audits, and preventive maintenance.",
-    tags: ["Electrical Wiring", "Solar Panels", "Power Audits", "DB Boards"],
+    title: "Electrical & Solar Services",
+    description: "Wiring, circuit repairs, panel upgrades, lighting installation, and end-to-end solar energy systems.",
+    tags: ["Wiring & Repairs", "Solar Panels", "LED Lighting", "Panel Upgrades"],
   },
   {
     id: "security", icon: Shield, num: "02",
-    title: "Security Systems",
-    description: "CCTV, intruder alarms, electric fencing, access control & automated gates — layered protection.",
-    tags: ["CCTV Cameras", "Intruder Alarms", "Electric Fence", "Access Control"],
+    title: "Security Systems & CCTV",
+    description: "CCTV surveillance, electric fencing, remote access viewing, and smart integration — layered protection.",
+    tags: ["CCTV Cameras", "Electric Fencing", "Remote Access", "Smart Integration"],
   },
   {
     id: "networking", icon: Wifi, num: "03",
     title: "Networking & Communication",
-    description: "Structured cabling, Wi-Fi access points, IP telephony, and full network management.",
-    tags: ["Cat6 Cabling", "Wi-Fi APs", "VoIP Systems", "Network Config"],
+    description: "Structured cabling, Wi-Fi optimization, hardware provisioning, and VoIP systems for reliable connectivity.",
+    tags: ["Structured Cabling", "Wi-Fi APs", "VoIP Systems", "Hardware Setup"],
   },
   {
     id: "assessment", icon: ClipboardCheck, num: "04",
-    title: "Routine Assessments",
-    description: "Regular inspections, urgent repairs, and health & safety checks with detailed reports.",
-    tags: ["System Audits", "Urgent Repairs", "H&S Checks", "Reports"],
+    title: "Routine Maintenance & Support",
+    description: "UPS battery testing, camera lens cleaning, CCTV storage health checks, and NVR/DVR software updates.",
+    tags: ["UPS Testing", "Camera Cleaning", "HDD Checks", "Software Updates"],
   },
   {
     id: "design", icon: PencilRuler, num: "05",
-    title: "System Design & Drawings",
-    description: "AutoCAD electrical layouts, security system planning, and network infrastructure design.",
-    tags: ["AutoCAD Plans", "Security Layout", "Network Design", "Documentation"],
+    title: "System Design",
+    description: "Security system layouts and network infrastructure design for accurate installation and future maintenance.",
+    tags: ["Security Layout", "Wi-Fi AP Design", "Network Planning", "Documentation"],
   },
 ];
 

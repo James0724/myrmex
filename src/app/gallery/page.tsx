@@ -65,7 +65,7 @@ export default function GalleryPage() {
               },
               {
                 label: "Security",
-                sub: "CCTV, alarms, fencing",
+                sub: "CCTV, electric fencing, smart systems",
                 image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=75",
                 count: "200+",
               },
@@ -77,7 +77,7 @@ export default function GalleryPage() {
               },
               {
                 label: "System Design",
-                sub: "AutoCAD layouts, plans",
+                sub: "Security & network layouts",
                 image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=600&q=75",
                 count: "50+",
               },

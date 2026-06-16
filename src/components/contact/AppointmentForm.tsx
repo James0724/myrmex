@@ -20,11 +20,11 @@ const schema = z.object({
 type FormData = z.infer<typeof schema>;
 
 const serviceOptions = [
-  { value: "power",      label: "Power Systems & Electrical" },
-  { value: "security",   label: "Security Systems" },
+  { value: "power",      label: "Electrical & Solar Services" },
+  { value: "security",   label: "Security Systems & CCTV" },
   { value: "networking", label: "Networking & Communication" },
-  { value: "assessment", label: "Routine Assessment" },
-  { value: "design",     label: "System Design & Technical Drawings" },
+  { value: "assessment", label: "Routine Maintenance & Support" },
+  { value: "design",     label: "System Design" },
   { value: "general",    label: "General Enquiry" },
 ];
 

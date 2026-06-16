@@ -5,11 +5,11 @@ import { motion } from "framer-motion";
 import { Zap, Shield, Wifi, ClipboardCheck, PencilRuler } from "lucide-react";
 
 const servicesList = [
-  { icon: Zap, label: "Power Systems & Electrical" },
+  { icon: Zap, label: "Electrical & Solar Services" },
   { icon: Shield, label: "Security Systems & CCTV" },
   { icon: Wifi, label: "Networking & Communication" },
-  { icon: ClipboardCheck, label: "Routine Assessments & Support" },
-  { icon: PencilRuler, label: "System Design & Technical Drawings" },
+  { icon: ClipboardCheck, label: "Routine Maintenance & Support" },
+  { icon: PencilRuler, label: "System Design" },
 ];
 
 const stats = [

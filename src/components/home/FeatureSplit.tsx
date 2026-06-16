@@ -7,11 +7,11 @@ import { CheckCircle2, ArrowRight } from "lucide-react";
 
 const highlights = [
   "Certified & licensed technicians",
-  "Genuine OEM products only",
+  "Reliable, well-tested equipment",
   "Transparent itemised quotes",
-  "24/7 emergency response",
+  "Dedicated after-service support",
   "Full documentation & handover",
-  "Scheduled maintenance support",
+  "Scheduled maintenance visits",
 ];
 
 export default function FeatureSplit() {
@@ -31,17 +31,18 @@ export default function FeatureSplit() {
           </div>
 
           <h2 className="font-display text-5xl sm:text-6xl lg:text-7xl font-700 text-white uppercase leading-none mb-8">
-            Professional.
+            Smart.
             <br />
-            <span className="text-brand-green-muted">Smart.</span>
+            <span className="text-brand-green-muted">Reliable.</span>
             <br />
-            Lasting.
+            Built to Last.
           </h2>
 
           <p className="text-white/60 text-sm leading-relaxed mb-8 max-w-md">
-            Every service we deliver is backed by certified expertise, genuine
-            materials, and a commitment to performance that outlasts the
-            competition.
+            We are committed to delivering reliable technical maintenance
+            solutions built on trust, professionalism, and consistency. We
+            prioritize continuous improvement and dependable support to ensure
+            lasting value for every client we serve.
           </p>
 
           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-10">

@@ -8,11 +8,11 @@ import SectionHeading from "@/components/ui/SectionHeading";
 
 const features = [
   "Certified, Skilled Technicians",
-  "Genuine Products Only",
+  "Reliable, Well-Tested Equipment",
   "Transparent Pricing",
   "After-Service Support",
   "Health & Safety Compliant",
-  "Rapid Emergency Response",
+  "Continuous Improvement",
 ];
 
 const FadeImage = ({
@@ -82,9 +82,9 @@ export default function IntroSection() {
         <div style={reveal(200)}>
           <SectionHeading
             eyebrow="About Myrmex"
-            title="Raising the Standard of"
-            highlight="Maintenance"
-            description="Built on one clear purpose — deliver professional, smart, and lasting property solutions."
+            title="Committed to"
+            highlight="Reliability"
+            description="We deliver technical maintenance solutions built on trust, professionalism, and a genuine commitment to lasting value."
           />
         </div>
 
@@ -126,16 +126,17 @@ export default function IntroSection() {
               className="text-gray-500 text-base leading-relaxed"
               style={reveal(500)}
             >
-              Myrmex Property Maintenance exists to raise the standard of
-              property services in an industry often affected by{" "}
+              We understand that property maintenance is about ensuring
+              long-term functionality, safety, and value. By installing
+              technically reliable power, security, and networking solutions,
+              we help create properties that operate efficiently and support
+              the people who depend on them. Trust is earned through{" "}
               <strong className="text-brand-dark font-semibold">
-                unreliable workmanship
+                consistent results
               </strong>{" "}
-              and poor after-service support. Every project — whether a power
-              system, security installation, or networking infrastructure — is
-              carried out with{" "}
+              and{" "}
               <strong className="text-brand-dark font-semibold">
-                precision and commitment
+                dedicated support
               </strong>
               .
             </p>

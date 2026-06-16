@@ -8,8 +8,8 @@ import { ArrowUpRight } from "lucide-react";
 const projects = [
   {
     category: "Electrical",
-    title: "Power Systems & Solar",
-    desc: "Panel installations, solar setup, and electrical audits for homes and businesses.",
+    title: "Electrical & Solar",
+    desc: "Wiring, circuit repairs, solar installation, and lighting solutions for homes and businesses.",
     image:
       "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&q=75",
     href: "/services#power",
@@ -18,8 +18,8 @@ const projects = [
   },
   {
     category: "Security",
-    title: "CCTV & Access Control",
-    desc: "Surveillance cameras, alarms, electric fencing, and gate automation.",
+    title: "CCTV & Security",
+    desc: "CCTV surveillance and electric fencing for comprehensive perimeter and property protection.",
     image:
       "https://res.cloudinary.com/dodivhwd8/image/upload/v1779091976/20251206_112757_efxiqc.jpg",
     href: "/services#security",

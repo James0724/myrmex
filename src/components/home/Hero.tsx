@@ -12,7 +12,7 @@ import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 const slides = [
   {
     img: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1800&q=75",
-    eyebrow: "Power Systems",
+    eyebrow: "Electrical & Solar",
     headline: "Reliable Electrical Solutions",
     sub: "From distribution boards to solar — built to last.",
   },
@@ -20,7 +20,7 @@ const slides = [
     img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1800&q=75",
     eyebrow: "Security Systems",
     headline: "Complete Property Protection",
-    sub: "CCTV, alarms, electric fencing & access control.",
+    sub: "CCTV surveillance and electric fencing for layered property protection.",
   },
   {
     img: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1800&q=75",
@@ -235,7 +235,7 @@ export default function Hero() {
             {[
               { v: "500+", l: "Projects" },
               { v: "5+", l: "Years" },
-              { v: "24/7", l: "Support" },
+              { v: "98%", l: "Satisfaction" },
             ].map(({ v, l }, i) => (
               <div
                 key={l}

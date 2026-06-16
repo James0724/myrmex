@@ -11,7 +11,7 @@ const IMAGES = [
   { id: "2",  cat: "security",   title: "CCTV Camera Network Setup",             url: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=75" },
   { id: "3",  cat: "power",      title: "Solar Panel Array — Residential",       url: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=75" },
   { id: "4",  cat: "networking", title: "Server Room Structured Cabling",        url: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=75" },
-  { id: "5",  cat: "security",   title: "Access Control & Biometric Entry",      url: "https://images.unsplash.com/photo-1580894908361-967195033215?w=800&q=75" },
+  { id: "5",  cat: "security",   title: "CCTV Setup & Configuration",             url: "https://images.unsplash.com/photo-1580894908361-967195033215?w=800&q=75" },
   { id: "6",  cat: "networking", title: "Network Cabinet & Patch Panel",         url: "https://images.unsplash.com/photo-1542621334-a254cf47733d?w=800&q=75" },
   { id: "7",  cat: "power",      title: "Electrical Wiring Installation",        url: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=75" },
   { id: "8",  cat: "security",   title: "Electric Perimeter Fence System",       url: "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=800&q=75" },

@@ -11,7 +11,7 @@ import {
   CheckCircle2,
   Wrench,
   ShieldCheck,
-  FileText,
+  TrendingUp,
   Clock4,
 } from "lucide-react";
 import Image from "next/image";
@@ -23,14 +23,10 @@ export const metadata: Metadata = {
 };
 
 const values = [
-  "Integrity in every project",
-  "Skilled, certified workmanship",
-  "Genuine, quality products only",
-  "Transparent pricing & communication",
-  "Long-term client relationships",
-  "Safety-first approach",
-  "On-time delivery",
-  "Detailed handover documentation",
+  "Integrity",
+  "Quality workmanship",
+  "Dedicated support",
+  "Community impact",
 ];
 
 const team = [
@@ -75,27 +71,26 @@ export default function AboutPage() {
               <div>
                 <SectionHeading
                   eyebrow="Our Story"
-                  title="Built on One"
-                  highlight="Purpose"
+                  title="Why We Founded"
+                  highlight="Myrmex"
                 />
                 <div className="space-y-5 text-gray-500 text-base leading-relaxed">
                   <p>
-                    Myrmex Property Maintenance was founded to raise the
-                    standard of maintenance services in an industry often
-                    affected by unreliable workmanship and poor after-service
-                    support.
-                  </p>
-                  <p>
                     We understand that property maintenance is about ensuring
-                    long-term functionality, safety, and value. Every project we
-                    handle — whether it&apos;s a power system, a security
-                    system, or a networking infrastructure — is carried out with
-                    precision and a commitment to excellence.
+                    long-term functionality, safety, and value. By installing
+                    technically reliable power, security, and networking
+                    solutions, we help create properties that operate
+                    efficiently.
                   </p>
                   <p>
-                    Our goal is to become the leading name in property
-                    maintenance across Kenya and beyond, recognized for
-                    integrity, quality, and customer satisfaction.
+                    Our mission is to help homeowners and property managers
+                    maintain safe, secure, and connected environments through
+                    expert services and practical solutions.
+                  </p>
+                  <p>
+                    We believe that trust is earned through consistent results,
+                    dedicated support, and a genuine commitment to the people
+                    and communities we serve.
                   </p>
                 </div>
               </div>
@@ -136,9 +131,10 @@ export default function AboutPage() {
                   Our Mission
                 </h3>
                 <p className="text-gray-500 group-hover:text-white/60 text-base leading-relaxed transition-colors">
-                  To deliver professional, smart, and lasting maintenance
-                  solutions through skilled workmanship, genuine products, and
-                  transparent service delivery.
+                  To provide reliable solutions that enhance safety,
+                  connectivity, and efficiency for homeowners, businesses, and
+                  property managers through professional workmanship, dedicated
+                  support, and lasting value.
                 </p>
               </div>
               <div className="bg-brand-green p-10">
@@ -149,9 +145,10 @@ export default function AboutPage() {
                   Our Vision
                 </h3>
                 <p className="text-white/80 text-base leading-relaxed">
-                  To become a leading name in property maintenance across Kenya
-                  and beyond, recognized for integrity, quality, and customer
-                  satisfaction.
+                  To become a trusted leader in property maintenance solutions
+                  by setting the standard for reliability, professionalism, and
+                  innovation while creating a positive impact in the communities
+                  we serve.
                 </p>
               </div>
             </div>
@@ -193,9 +190,9 @@ export default function AboutPage() {
             </div>
             <div className="mt-10 flex flex-col sm:flex-row sm:items-center gap-6">
               <p className="text-white/50 text-sm leading-relaxed max-w-lg border-l-2 border-brand-orange pl-5">
-                In an industry plagued by unreliable workmanship and poor
-                after-service support, Myrmex was built on one clear purpose —
-                to deliver maintenance solutions that actually last.
+                Myrmex was built on one clear purpose — to deliver reliable
+                maintenance solutions that create lasting value for every client
+                we serve.
               </p>
               <div className="flex gap-10 shrink-0">
                 {[
@@ -265,27 +262,35 @@ export default function AboutPage() {
                 What Drives Our Work
               </h3>
             </div>
+            <p className="text-gray-500 text-sm leading-relaxed mb-8 max-w-2xl mx-auto text-center">
+              Our technicians work with carefully selected products from reliable
+              manufacturers to ensure system durability and performance. Product
+              quality alone is not sufficient — proper installation and
+              maintenance practices are essential to achieving dependable
+              results, and this balance is what delivers lasting value for our
+              clients.
+            </p>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-gray-200 border border-gray-200">
               {[
                 {
-                  icon: Wrench,
-                  title: "Skilled Workmanship",
-                  desc: "Precision-executed projects using certified techniques and best practices.",
-                },
-                {
                   icon: ShieldCheck,
-                  title: "Genuine Products",
-                  desc: "Only authentic, quality-assured materials — never counterfeit.",
+                  title: "Reliable Products",
+                  desc: "We use reliable, well-tested equipment from trusted manufacturers to ensure durable and stable systems, reducing failures and minimizing downtime.",
                 },
                 {
-                  icon: FileText,
-                  title: "Transparent Service",
-                  desc: "Clear communication, detailed reports, and honest pricing throughout.",
+                  icon: Wrench,
+                  title: "Skilled Technicians",
+                  desc: "Our skilled technicians apply industry best practices and technical expertise to deliver safe, efficient, and reliable solutions.",
+                },
+                {
+                  icon: TrendingUp,
+                  title: "Continuous Improvement",
+                  desc: "We continuously learn, adapt, and embrace new technologies to improve our services and deliver more effective, future-ready solutions.",
                 },
                 {
                   icon: Clock4,
                   title: "After-Service Support",
-                  desc: "Your long-term partner — scheduled visits and rapid response included.",
+                  desc: "We provide dedicated after-service support to ensure our solutions continue to perform reliably, offering assistance and guidance whenever needed.",
                 },
               ].map(({ icon: Icon, title, desc }) => (
                 <div

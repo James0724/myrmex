@@ -18,7 +18,7 @@ import {
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Comprehensive property maintenance services: Power Systems, Security, Networking, Assessments, and System Design.",
+    "Comprehensive property maintenance services: Electrical & Solar, Security Systems & CCTV, Networking & Communication, Routine Maintenance, and System Design.",
 };
 
 const services = [
@@ -26,29 +26,39 @@ const services = [
     id: "power",
     icon: Zap,
     num: "01",
-    title: "Power Systems & Electrical Services",
+    title: "Electrical & Solar Services",
     intro:
-      "Reliable power solutions focused on safety, efficiency, and long-term performance.",
+      "Reliable electrical & solar solutions based on safety, efficiency, and long-term performance.",
     items: [
       {
-        name: "General Electrical Services",
+        name: "Wiring & Circuit Repairs",
         detail:
-          "Installation, fault diagnosis, and maintenance of wiring systems, lighting, sockets, and distribution boards with proper circuit protection and load balancing.",
+          "Diagnosing and repairing wiring faults, replacing damaged circuits, and ensuring safe electrical connections throughout the property.",
       },
       {
-        name: "Solar Energy Systems",
+        name: "Electrical Panel Upgrades",
         detail:
-          "Consultation, design, and installation of solar panels, inverters, and battery storage for backup or off-grid applications configured for critical loads.",
+          "Upgrading distribution boards and circuit breakers for improved capacity, safety, and compliance with current standards.",
       },
       {
-        name: "Power System Audits",
+        name: "Lighting Installation",
         detail:
-          "Assessment of existing infrastructure to identify overloads, voltage drops, poor connections, and safety risks.",
+          "Installing indoor and outdoor lighting systems including energy-efficient LED upgrades and outdoor security lighting.",
       },
       {
-        name: "Preventive Maintenance",
+        name: "Emergency Electrical Services",
         detail:
-          "Scheduled inspections including thermal imaging of distribution boards, connection tightening, and performance checks.",
+          "Rapid response to electrical faults to restore power and address safety risks promptly.",
+      },
+      {
+        name: "Solar Consultation & Design",
+        detail:
+          "Assessment of energy needs and design of solar systems tailored for backup or off-grid applications.",
+      },
+      {
+        name: "Solar Installation & Maintenance",
+        detail:
+          "Installation of solar panels, inverters, and battery storage, along with scheduled maintenance to keep systems performing reliably.",
       },
     ],
     image:
@@ -72,34 +82,29 @@ const services = [
     id: "security",
     icon: Shield,
     num: "02",
-    title: "Security Systems",
+    title: "Security Systems & CCTV",
     intro:
       "Layered security solutions combining monitoring, detection, and controlled access.",
     items: [
       {
-        name: "CCTV Surveillance",
+        name: "IP & Analog Camera Systems",
         detail:
-          "IP and analog camera systems with structured cabling, NVR/DVR setup, and remote viewing on mobile and desktop platforms.",
+          "Full-featured IP and analog camera installations with structured cabling, NVR/DVR setup, and both indoor and outdoor mounting.",
       },
       {
-        name: "Intruder Alarms",
+        name: "Remote Access & Smart Integration",
         detail:
-          "Motion sensors, door/window contacts, and control panels for real-time alerts and reliable intrusion detection.",
+          "Network-based wireless camera systems with remote access viewing on mobile and desktop, integrated with smart monitoring platforms.",
+      },
+      {
+        name: "System Repairs & Data Recovery",
+        detail:
+          "Troubleshooting camera faults, repairing system components, and recovering stored footage from backup storage devices.",
       },
       {
         name: "Electric Fencing",
         detail:
-          "Perimeter electric fence systems including energizers, earthing, and fault detection for consistent protection.",
-      },
-      {
-        name: "Access Control & Attendance",
-        detail:
-          "Biometric and RFID systems for managing entry points and personnel movement, integrated with secure locking mechanisms.",
-      },
-      {
-        name: "Automatic Gates & Intercoms",
-        detail:
-          "Gate automation systems integrated with audio/video intercoms for controlled and monitored access.",
+          "Active perimeter intruder deterrent system for protecting properties, livestock, and farm crops.",
       },
     ],
     image:
@@ -111,7 +116,7 @@ const services = [
       },
       {
         src: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=700&q=75",
-        label: "Access Control",
+        label: "Camera Systems",
       },
       {
         src: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=700&q=75",
@@ -125,27 +130,27 @@ const services = [
     num: "03",
     title: "Networking & Communication",
     intro:
-      "Infrastructure to support modern security and communication systems.",
+      "Networking and communication systems are the digital highways that allow your devices to talk to each other seamlessly. We install and maintain these essential systems so your business stays fast, secure, and always online.",
     items: [
       {
         name: "Structured Cabling",
         detail:
-          "Cat6/Cat6A and fiber optic cabling with proper routing, labeling, and termination for stable data transmission.",
+          "Installing high-speed fiber or Ethernet cables to connect office hardware with proper routing, labeling, and termination for stable data transmission.",
       },
       {
-        name: "Wi-Fi Access Points",
+        name: "Wi-Fi Optimization",
         detail:
-          "Strategic deployment to achieve full coverage, minimize interference, and support multiple connected devices.",
+          "Mapping and setting up wireless access points (APs) to eliminate dead zones and support multiple connected devices across the premises.",
       },
       {
-        name: "IP Telephony",
+        name: "Hardware Provisioning",
         detail:
-          "VoIP systems for efficient internal and external communication in residential and commercial environments.",
+          "Installing routers and switches to manage data flow, including bandwidth allocation, network security, and system segmentation.",
       },
       {
-        name: "Network Management",
+        name: "VoIP Systems",
         detail:
-          "Router and switch configuration including bandwidth allocation, network security, and system segmentation for CCTV and critical services.",
+          "Replacing old phone lines with internet-based voice calling systems for efficient internal and external communication.",
       },
     ],
     image:
@@ -153,7 +158,7 @@ const services = [
     extraImages: [
       {
         src: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=700&q=75",
-        label: "Server Infrastructure",
+        label: "Network Infrastructure",
       },
       {
         src: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=700&q=75",
@@ -161,7 +166,7 @@ const services = [
       },
       {
         src: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=700&q=75",
-        label: "Network Management",
+        label: "Wi-Fi Optimization",
       },
     ],
   },
@@ -169,23 +174,28 @@ const services = [
     id: "assessment",
     icon: ClipboardCheck,
     num: "04",
-    title: "Routine Assessments & Support",
-    intro: "Ongoing system evaluation to maintain performance and reliability.",
+    title: "Routine Maintenance & Support",
+    intro: "Ongoing system maintenance to maintain performance and reliability.",
     items: [
       {
-        name: "Routine Property Assessments",
+        name: "UPS Battery Testing",
         detail:
-          "Regular inspection of power, security, and networking systems with detailed reports and recommended actions.",
+          "Testing battery backup systems to ensure they seamlessly engage during power outages and maintain consistent protection.",
       },
       {
-        name: "Urgent Repairs",
+        name: "Camera Lens Cleaning",
         detail:
-          "Rapid response to critical faults affecting safety or system functionality.",
+          "Routine cleaning of CCTV camera lenses to maintain image clarity and recording quality.",
       },
       {
-        name: "Health & Safety Inspections",
+        name: "CCTV Storage Health Checks",
         detail:
-          "Comprehensive checks ensuring all installations meet safety requirements and operate within acceptable standards.",
+          "Inspecting hard drive health and storage capacity to ensure continuous and uninterrupted recording.",
+      },
+      {
+        name: "NVR/DVR Software Updates",
+        detail:
+          "Applying firmware and software updates to network and digital video recorders to maintain system security and performance.",
       },
     ],
     image:
@@ -209,24 +219,19 @@ const services = [
     id: "design",
     icon: PencilRuler,
     num: "05",
-    title: "System Design & Technical Drawings",
+    title: "System Design",
     intro:
       "Professional technical documentation for accurate installation and future maintenance.",
     items: [
       {
-        name: "Electrical Plan Layout (AutoCAD)",
-        detail:
-          "Detailed electrical layouts including lighting, socket distribution, cable routing, and DB configuration.",
-      },
-      {
         name: "Security System Layouts",
         detail:
-          "Planning and positioning of cameras, alarm sensors, and access control devices for full coverage.",
+          "Planning and positioning of cameras and security perimeter devices for full coverage and effective monitoring.",
       },
       {
         name: "Network Infrastructure Design",
         detail:
-          "Structured layout of data points, rack locations, cable routing, and access point placement.",
+          "Wi-Fi access points (APs) placement for optimal coverage and performance.",
       },
     ],
     image:
