@@ -59,16 +59,8 @@ export default function Navbar() {
             width={320}
             height={80}
             priority
-            className="
-      absolute
-      top-1/2
-      -translate-y-1/2
-      h-44
-      w-auto
-      object-contain
-      brightness-0
-      invert
-    "
+            style={{ width: "auto" }}
+            className="absolute top-1/2 -translate-y-1/2 h-44 w-auto object-contain brightness-0 invert"
           />
         </Link>
 
@@ -142,13 +134,14 @@ export default function Navbar() {
             width={320}
             height={80}
             priority
+            style={{ width: "auto" }}
             className="absolute top-1/2 -translate-y-1/2 h-20 w-auto object-contain brightness-0 invert"
           />
         </Link>
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
-          className="text-white rounded-full hover:bg-white/10 transition-colors"
+          className="text-white rounded-full p-1 hover:bg-white/10 transition-colors"
         >
           {mobileOpen ? <X size={18} /> : <Menu size={18} />}
         </button>

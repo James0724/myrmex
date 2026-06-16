@@ -37,17 +37,17 @@ const team = [
   },
   {
     name: "Emmanuel",
-    role: "Lead Security Technician",
+    role: "Technician",
     img: "https://res.cloudinary.com/dodivhwd8/image/upload/v1781257592/Emmanuel_flnpya.png",
   },
   {
     name: "Nelson",
-    role: "Network Engineer",
+    role: "Technician",
     img: "https://res.cloudinary.com/dodivhwd8/image/upload/v1781257592/Nelson_wmqhxy.png",
   },
   {
     name: "Ken",
-    role: "Quality Assurance",
+    role: "Technician",
     img: "https://res.cloudinary.com/dodivhwd8/image/upload/v1781257591/Ken_zjwaro.png",
   },
 ];
@@ -232,7 +232,7 @@ export default function AboutPage() {
                       src={member.img}
                       alt={member.name}
                       fill
-                      className="object-cover object-top grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
+                      className="object-cover object-top md:grayscale md:group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
                       sizes="(max-width: 640px) 50vw, 25vw"
                     />
                     <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-brand-green scale-x-0 group-hover:scale-x-100 transition-transform duration-400 origin-left" />
@@ -263,12 +263,12 @@ export default function AboutPage() {
               </h3>
             </div>
             <p className="text-gray-500 text-sm leading-relaxed mb-8 max-w-2xl mx-auto text-center">
-              Our technicians work with carefully selected products from reliable
-              manufacturers to ensure system durability and performance. Product
-              quality alone is not sufficient — proper installation and
-              maintenance practices are essential to achieving dependable
-              results, and this balance is what delivers lasting value for our
-              clients.
+              Our technicians work with carefully selected products from
+              reliable manufacturers to ensure system durability and
+              performance. Product quality alone is not sufficient — proper
+              installation and maintenance practices are essential to achieving
+              dependable results, and this balance is what delivers lasting
+              value for our clients.
             </p>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-gray-200 border border-gray-200">
               {[
