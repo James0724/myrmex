@@ -89,17 +89,12 @@ const services = [
       {
         name: "IP & Analog Camera Systems",
         detail:
-          "Full-featured IP and analog camera installations with structured cabling, NVR/DVR setup, and both indoor and outdoor mounting.",
+          "Full-featured IP and analog camera installations with structured cabling, NVR/DVR setup, and both indoor and outdoor mounting. Includes remote access viewing on mobile and desktop, smart monitoring platform integration, system troubleshooting, component repairs, and footage recovery from backup storage devices.",
       },
       {
-        name: "Remote Access & Smart Integration",
+        name: "Intruder Alarm Installation",
         detail:
-          "Network-based wireless camera systems with remote access viewing on mobile and desktop, integrated with smart monitoring platforms.",
-      },
-      {
-        name: "System Repairs & Data Recovery",
-        detail:
-          "Troubleshooting camera faults, repairing system components, and recovering stored footage from backup storage devices.",
+          "Supply, installation, and commissioning of wired and wireless intruder alarm systems including motion sensors, door/window contacts, sirens, and control panels.",
       },
       {
         name: "Electric Fencing",
@@ -175,7 +170,8 @@ const services = [
     icon: ClipboardCheck,
     num: "04",
     title: "Routine Maintenance & Support",
-    intro: "Ongoing system maintenance to maintain performance and reliability.",
+    intro:
+      "Ongoing system maintenance to maintain performance and reliability.",
     items: [
       {
         name: "UPS Battery Testing",

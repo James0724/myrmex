@@ -2,39 +2,79 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Zap, Shield, Wifi, ClipboardCheck, PencilRuler, ArrowUpRight } from "lucide-react";
+import {
+  Zap,
+  Shield,
+  Wifi,
+  ClipboardCheck,
+  PencilRuler,
+  ArrowUpRight,
+} from "lucide-react";
 import SectionHeading from "@/components/ui/SectionHeading";
 
 const services = [
   {
-    id: "power", icon: Zap, num: "01",
+    id: "power",
+    icon: Zap,
+    num: "01",
     title: "Electrical & Solar Services",
-    description: "Wiring, circuit repairs, panel upgrades, lighting installation, and end-to-end solar energy systems.",
-    tags: ["Wiring & Repairs", "Solar Panels", "LED Lighting", "Panel Upgrades"],
+    description:
+      "Wiring, circuit repairs, panel upgrades, lighting installation, and end-to-end solar energy systems.",
+    tags: [
+      "Wiring & Repairs",
+      "Solar Panels",
+      "LED Lighting",
+      "Panel Upgrades",
+    ],
   },
   {
-    id: "security", icon: Shield, num: "02",
+    id: "security",
+    icon: Shield,
+    num: "02",
     title: "Security Systems & CCTV",
-    description: "CCTV surveillance, electric fencing, remote access viewing, and smart integration — layered protection.",
-    tags: ["CCTV Cameras", "Electric Fencing", "Remote Access", "Smart Integration"],
+    description:
+      "CCTV surveillance, electric fencing, remote access viewing, Intruder alarms, Video intercoms, Gate automation systems and smart integration — layered protection.",
+    tags: [
+      "CCTV Cameras",
+      "Electric Fencing",
+      "Remote Access",
+      "Intruder Alarms",
+      "Video Intercoms",
+      "Gate Automation",
+      "Smart Integration",
+    ],
   },
   {
-    id: "networking", icon: Wifi, num: "03",
+    id: "networking",
+    icon: Wifi,
+    num: "03",
     title: "Networking & Communication",
-    description: "Structured cabling, Wi-Fi optimization, hardware provisioning, and VoIP systems for reliable connectivity.",
+    description:
+      "Structured cabling, Wi-Fi optimization, hardware provisioning, and VoIP systems for reliable connectivity.",
     tags: ["Structured Cabling", "Wi-Fi APs", "VoIP Systems", "Hardware Setup"],
   },
   {
-    id: "assessment", icon: ClipboardCheck, num: "04",
+    id: "assessment",
+    icon: ClipboardCheck,
+    num: "04",
     title: "Routine Maintenance & Support",
-    description: "UPS battery testing, camera lens cleaning, CCTV storage health checks, and NVR/DVR software updates.",
+    description:
+      "UPS battery testing, camera lens cleaning, CCTV storage health checks, and NVR/DVR software updates.",
     tags: ["UPS Testing", "Camera Cleaning", "HDD Checks", "Software Updates"],
   },
   {
-    id: "design", icon: PencilRuler, num: "05",
+    id: "design",
+    icon: PencilRuler,
+    num: "05",
     title: "System Design",
-    description: "Security system layouts and network infrastructure design for accurate installation and future maintenance.",
-    tags: ["Security Layout", "Wi-Fi AP Design", "Network Planning", "Documentation"],
+    description:
+      "Security system layouts and network infrastructure design for accurate installation and future maintenance.",
+    tags: [
+      "Security Layout",
+      "Wi-Fi AP Design",
+      "Network Planning",
+      "Documentation",
+    ],
   },
 ];
 
@@ -45,7 +85,14 @@ const container = {
 
 const item = {
   hidden: { opacity: 0, y: 40 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] } },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: [0.16, 1, 0.3, 1] as [number, number, number, number],
+    },
+  },
 };
 
 export default function ServicesSection() {
@@ -94,7 +141,10 @@ export default function ServicesSection() {
                 {/* Tags */}
                 <div className="flex flex-wrap gap-2 mb-6">
                   {s.tags.map((t) => (
-                    <span key={t} className="text-[10px] font-semibold uppercase tracking-wide border border-gray-200 group-hover:border-white/15 text-gray-400 group-hover:text-white/50 px-2 py-1 transition-colors">
+                    <span
+                      key={t}
+                      className="text-[10px] font-semibold uppercase tracking-wide border border-gray-200 group-hover:border-white/15 text-gray-400 group-hover:text-white/50 px-2 py-1 transition-colors"
+                    >
                       {t}
                     </span>
                   ))}
@@ -119,12 +169,16 @@ export default function ServicesSection() {
             className="bg-brand-green p-8 flex flex-col justify-between"
           >
             <div>
-              <span className="text-white/40 text-[10px] font-bold uppercase tracking-[0.4em] mb-5 block">06</span>
+              <span className="text-white/40 text-[10px] font-bold uppercase tracking-[0.4em] mb-5 block">
+                06
+              </span>
               <h3 className="font-display text-2xl font-800 text-white uppercase mb-4 leading-tight">
                 Need a Tailored Solution?
               </h3>
               <p className="text-white/70 text-sm leading-relaxed">
-                Every property is unique. Get a free on-site assessment and custom quote.
+                Every property is unique. Get a free on-site assessment and
+                custom quote. Free within Nairobi — a small travel fee applies
+                outside Nairobi.
               </p>
             </div>
             <Link

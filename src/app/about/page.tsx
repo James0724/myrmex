@@ -31,22 +31,22 @@ const values = [
 
 const team = [
   {
-    name: "David",
+    name: "David B. Wanyonyi",
     role: "Operations Lead",
     img: "https://res.cloudinary.com/dodivhwd8/image/upload/v1781257592/David_egomze.png",
   },
   {
-    name: "Emmanuel",
+    name: "Emmanuel Wambua",
     role: "Technician",
     img: "https://res.cloudinary.com/dodivhwd8/image/upload/v1781257592/Emmanuel_flnpya.png",
   },
   {
-    name: "Nelson",
+    name: "Nelson Kisau",
     role: "Technician",
     img: "https://res.cloudinary.com/dodivhwd8/image/upload/v1781257592/Nelson_wmqhxy.png",
   },
   {
-    name: "Ken",
+    name: "Kennedy Juma",
     role: "Technician",
     img: "https://res.cloudinary.com/dodivhwd8/image/upload/v1781257591/Ken_zjwaro.png",
   },

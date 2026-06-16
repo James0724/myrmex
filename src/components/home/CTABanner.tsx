@@ -57,7 +57,7 @@ export default function CTABanner() {
             className="text-white/60 text-base leading-relaxed mb-10"
           >
             Schedule a free on-site consultation. We&apos;ll assess your power, security,
-            and networking systems — with no obligation.
+            and networking systems — with no obligation. Free within Nairobi; a small travel fee applies outside Nairobi.
           </motion.p>
 
           <motion.div

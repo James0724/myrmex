@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 
 const highlights = [
-  "Certified & licensed technicians",
+  "Certified technicians",
   "Reliable, well-tested equipment",
   "Transparent itemised quotes",
   "Dedicated after-service support",
