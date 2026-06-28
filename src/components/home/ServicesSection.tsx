@@ -33,15 +33,13 @@ const services = [
     num: "02",
     title: "Security Systems & CCTV",
     description:
-      "CCTV surveillance, electric fencing, remote access viewing, Intruder alarms, Video intercoms, Gate automation systems and smart integration — layered protection.",
+      "CCTV camera installation, intruder alarms, and electric fencing — with remote viewing on your phone for round-the-clock peace of mind.",
     tags: [
       "CCTV Cameras",
       "Electric Fencing",
-      "Remote Access",
+      "Remote Viewing",
       "Intruder Alarms",
-      "Video Intercoms",
-      "Gate Automation",
-      "Smart Integration",
+      "Smart Monitoring",
     ],
   },
   {
@@ -177,7 +175,7 @@ export default function ServicesSection() {
               </h3>
               <p className="text-white/70 text-sm leading-relaxed">
                 Every property is unique. Get a free on-site assessment and
-                custom quote. Free within Nairobi — a small travel fee applies
+                custom quote. Free within Nairobi — a commitment fee applies
                 outside Nairobi.
               </p>
             </div>

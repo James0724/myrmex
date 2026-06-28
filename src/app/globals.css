@@ -135,3 +135,38 @@
 .embla { overflow: hidden; }
 .embla__container { display: flex; }
 .embla__slide { flex: 0 0 100%; min-width: 0; }
+
+/* Rich text content — shared by the Tiptap editor and rendered blog posts */
+.blog-content h1 { font-size: 1.875rem; margin: 2rem 0 1rem; }
+.blog-content h2 { font-size: 1.5rem; margin: 1.75rem 0 0.875rem; }
+.blog-content h3 { font-size: 1.25rem; margin: 1.5rem 0 0.75rem; }
+.blog-content p { margin-bottom: 1.1rem; }
+.blog-content ul, .blog-content ol { margin: 0 0 1.1rem 1.25rem; }
+.blog-content ul { list-style: disc; }
+.blog-content ol { list-style: decimal; }
+.blog-content li { margin-bottom: 0.4rem; }
+.blog-content li > p { margin-bottom: 0.25rem; }
+.blog-content blockquote {
+  border-left: 3px solid var(--color-brand-orange);
+  padding-left: 1rem;
+  font-style: italic;
+  opacity: 0.9;
+  margin: 1.25rem 0;
+}
+.blog-content a {
+  color: var(--color-brand-green-mid);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.blog-content img { border-radius: 0.75rem; margin: 1.5rem 0; max-width: 100%; height: auto; }
+.blog-content hr { border: none; border-top: 1px solid currentColor; opacity: 0.15; margin: 2rem 0; }
+.blog-content strong { font-weight: 700; }
+.blog-content > :first-child { margin-top: 0; }
+
+.ProseMirror p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  color: #6b7280;
+  float: left;
+  height: 0;
+  pointer-events: none;
+}

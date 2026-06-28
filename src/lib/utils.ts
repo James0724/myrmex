@@ -20,6 +20,14 @@ export function formatDateTime(dateString: string): string {
   });
 }
 
+export function slugify(text: string): string {
+  return text
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
 export const SERVICE_LABELS: Record<string, string> = {
   power: "Electrical & Solar Services",
   security: "Security Systems & CCTV",

@@ -29,7 +29,7 @@ const projects = [
   {
     category: "Networking",
     title: "Structured Cabling & Wi-Fi",
-    desc: "Cat6 cabling, access point deployment, and full network infrastructure.",
+    desc: "Reliable internet cabling and full Wi-Fi coverage for homes, offices, and commercial buildings.",
     image:
       "https://images.unsplash.com/photo-1542621334-a254cf47733d?w=800&q=75",
     href: "/services#networking",

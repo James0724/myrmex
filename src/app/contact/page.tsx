@@ -163,7 +163,7 @@ export default function ContactPage() {
               </h3>
               <ul className="space-y-4">
                 {[
-                  "Free on-site assessment within Nairobi — travel fee applies outside",
+                  "Free on-site assessment within Nairobi — a commitment fee applies outside",
                   "Same-day response for urgent faults",
                   "Transparent itemised quotes before any work",
                   "Certified technicians for every job",

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { auth } from "@/lib/auth";
 import Link from "next/link";
-import { Calendar, MessageSquare, Image, TrendingUp, ArrowRight } from "lucide-react";
+import { Calendar, MessageSquare, TrendingUp, ArrowRight, FolderKanban, Newspaper } from "lucide-react";
 
 export const metadata: Metadata = { title: "Dashboard" };
 
@@ -49,12 +49,20 @@ export default async function AdminDashboard() {
       color: "bg-amber-500/10 text-amber-500",
     },
     {
-      label: "Gallery Images",
-      value: stats?.totalGalleryImages ?? "—",
+      label: "Projects",
+      value: stats?.totalProjects ?? "—",
       badge: null,
-      icon: Image,
-      href: "/admin/gallery",
-      color: "bg-purple-500/10 text-purple-500",
+      icon: FolderKanban,
+      href: "/admin/projects",
+      color: "bg-sky-500/10 text-sky-500",
+    },
+    {
+      label: "Blog Posts",
+      value: stats?.totalBlogPosts ?? "—",
+      badge: stats?.publishedBlogPosts ? `${stats.publishedBlogPosts} published` : null,
+      icon: Newspaper,
+      href: "/admin/blog",
+      color: "bg-pink-500/10 text-pink-500",
     },
   ];
 
@@ -105,7 +113,8 @@ export default async function AdminDashboard() {
           {[
             { href: "/admin/messages", label: "View All Messages", icon: MessageSquare },
             { href: "/admin/appointments", label: "Manage Appointments", icon: Calendar },
-            { href: "/admin/gallery", label: "Upload Gallery Image", icon: Image },
+            { href: "/admin/projects/new", label: "New Project", icon: FolderKanban },
+            { href: "/admin/blog/new", label: "New Blog Post", icon: Newspaper },
           ].map(({ href, label, icon: Icon }) => (
             <Link
               key={href}

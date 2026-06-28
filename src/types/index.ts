@@ -35,23 +35,50 @@ export interface IMessage {
   updatedAt: string;
 }
 
-export interface IGalleryImage {
-  _id: string;
-  cloudinaryId: string;
-  url: string;
-  title: string;
-  category: ServiceCategory;
-  width?: number;
-  height?: number;
-  createdAt: string;
-}
-
 export interface IUser {
   _id: string;
   email: string;
   name: string;
   role: "admin" | "superadmin";
+  avatar?: string;
+  avatarPublicId?: string;
   createdAt: string;
+}
+
+export type ProjectCategory = "power-electricals" | "security" | "networking";
+
+export interface IProjectImage {
+  url: string;
+  publicId: string;
+}
+
+export interface IProject {
+  _id: string;
+  title: string;
+  category: ProjectCategory;
+  shortDescription: string;
+  coverImage: IProjectImage;
+  images: IProjectImage[];
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface IBlogImage {
+  url: string;
+  publicId: string;
+}
+
+export interface IBlog {
+  _id: string;
+  title: string;
+  slug: string;
+  excerpt: string;
+  content: string;
+  coverImage: IBlogImage;
+  published: boolean;
+  publishedAt: string | null;
+  createdAt: string;
+  updatedAt: string;
 }
 
 export interface AdminStats {
@@ -60,5 +87,7 @@ export interface AdminStats {
   totalAppointments: number;
   pendingAppointments: number;
   confirmedAppointments: number;
-  totalGalleryImages: number;
+  totalProjects: number;
+  totalBlogPosts: number;
+  publishedBlogPosts: number;
 }

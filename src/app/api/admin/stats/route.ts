@@ -2,7 +2,8 @@ import { NextResponse } from "next/server";
 import { connectDB } from "@/lib/mongodb";
 import Message from "@/models/Message";
 import Appointment from "@/models/Appointment";
-import GalleryImage from "@/models/GalleryImage";
+import Project from "@/models/Project";
+import Blog from "@/models/Blog";
 import { auth } from "@/lib/auth";
 
 export async function GET() {
@@ -19,14 +20,18 @@ export async function GET() {
       totalAppointments,
       pendingAppointments,
       confirmedAppointments,
-      totalGalleryImages,
+      totalProjects,
+      totalBlogPosts,
+      publishedBlogPosts,
     ] = await Promise.all([
       Message.countDocuments(),
       Message.countDocuments({ status: "unread" }),
       Appointment.countDocuments(),
       Appointment.countDocuments({ status: "pending" }),
       Appointment.countDocuments({ status: "confirmed" }),
-      GalleryImage.countDocuments(),
+      Project.countDocuments(),
+      Blog.countDocuments(),
+      Blog.countDocuments({ published: true }),
     ]);
 
     return NextResponse.json({
@@ -35,7 +40,9 @@ export async function GET() {
       totalAppointments,
       pendingAppointments,
       confirmedAppointments,
-      totalGalleryImages,
+      totalProjects,
+      totalBlogPosts,
+      publishedBlogPosts,
     });
   } catch (error) {
     console.error("Stats error:", error);

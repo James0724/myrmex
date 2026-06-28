@@ -15,8 +15,8 @@ const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
-  { href: "/gallery", label: "Gallery" },
-  { href: "/contact", label: "Contact" },
+  { href: "/projects", label: "Projects" },
+  { href: "/blog", label: "Blog" },
 ];
 
 export default function Navbar() {
@@ -109,7 +109,7 @@ export default function Navbar() {
             href="/contact"
             className="btn-fill bg-brand-green text-white text-xs font-bold uppercase tracking-widest px-5 py-2.5 rounded-full hover:text-white transition-colors"
           >
-            Book Now
+            Contact Us
           </Link>
         </div>
       </motion.div>

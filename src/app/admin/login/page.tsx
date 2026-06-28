@@ -45,12 +45,13 @@ function LoginForm() {
           <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-brand-green/20 border border-brand-green/30 mb-4">
             <Lock size={28} className="text-brand-green" />
           </div>
-          <div className="relative w-40 h-12 mx-auto mb-2">
+          <div className="relative w-48 h-14 mx-auto mb-2 overflow-visible">
             <Image
               src="/logo.png"
               alt="Myrmex"
-              fill
-              className="object-contain brightness-0 invert"
+              width={320}
+              height={320}
+              className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-48 w-auto object-contain brightness-0 invert"
             />
           </div>
           <p className="text-gray-500 text-sm">Admin Portal</p>

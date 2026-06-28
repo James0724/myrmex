@@ -138,12 +138,12 @@ const services = [
           "Mapping and setting up wireless access points (APs) to eliminate dead zones and support multiple connected devices across the premises.",
       },
       {
-        name: "Hardware Provisioning",
+        name: "Routers & Switches Setup",
         detail:
-          "Installing routers and switches to manage data flow, including bandwidth allocation, network security, and system segmentation.",
+          "Installing and configuring routers and switches to manage data flow, including bandwidth allocation, network security, and system segmentation.",
       },
       {
-        name: "VoIP Systems",
+        name: "VoIP Systems (Internet Calling)",
         detail:
           "Replacing old phone lines with internet-based voice calling systems for efficient internal and external communication.",
       },

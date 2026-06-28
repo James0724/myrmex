@@ -30,6 +30,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
           email: user.email,
           name: user.name,
           role: user.role,
+          image: user.avatar || null,
         };
       },
     }),
@@ -39,10 +40,16 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
     error: "/admin/login",
   },
   callbacks: {
-    async jwt({ token, user }) {
+    async jwt({ token, user, trigger, session }) {
       if (user) {
         token.role = (user as { role?: string }).role;
         token.id = user.id;
+        token.picture = user.image ?? null;
+      }
+      // Handle profile updates via useSession().update()
+      if (trigger === "update" && session) {
+        if (session.name) token.name = session.name;
+        if (session.image !== undefined) token.picture = session.image;
       }
       return token;
     },
@@ -50,6 +57,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       if (session.user) {
         (session.user as { role?: string; id?: string }).role = token.role as string;
         (session.user as { role?: string; id?: string }).id = token.id as string;
+        session.user.image = (token.picture as string) ?? null;
       }
       return session;
     },
