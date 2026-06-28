@@ -16,6 +16,8 @@ export const metadata: Metadata = {
     "Tips, guides, and insights on electrical & solar, security systems, networking, and property maintenance from the Myrmex team.",
 };
 
+export const dynamic = "force-dynamic";
+
 async function getPosts(): Promise<IBlog[]> {
   await connectDB();
   const posts = await Blog.find({ published: true })

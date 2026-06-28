@@ -12,6 +12,8 @@ import Blog from "@/models/Blog";
 import { IBlog } from "@/types";
 import { formatDate } from "@/lib/utils";
 
+export const dynamic = "force-dynamic";
+
 async function getPost(slug: string): Promise<IBlog | null> {
   await connectDB();
   const post = await Blog.findOne({ slug, published: true }).lean();
