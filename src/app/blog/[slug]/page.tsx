@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import DOMPurify from "isomorphic-dompurify";
+import sanitizeHtml from "sanitize-html";
 import { ArrowLeft } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -44,7 +44,27 @@ export default async function BlogPostPage({
 
   if (!post) notFound();
 
-  const contentHtml = DOMPurify.sanitize(post.content);
+  const contentHtml = sanitizeHtml(post.content, {
+    allowedTags: [
+      "p", "br", "hr", "strong", "b", "em", "i", "u", "s", "strike",
+      "h1", "h2", "h3", "ul", "ol", "li", "blockquote", "a", "img",
+    ],
+    allowedAttributes: {
+      a: ["href", "target", "rel", "class"],
+      img: ["src", "alt", "class", "style", "width", "height"],
+      "*": ["style", "class"],
+    },
+    allowedStyles: {
+      "*": {
+        "text-align": [/^left$|^center$|^right$|^justify$/],
+      },
+      img: {
+        width: [/^\d+(?:px|%)?$/],
+        height: [/^\d+(?:px|%)?$/],
+      },
+    },
+    allowedSchemes: ["http", "https", "mailto"],
+  });
 
   return (
     <>
